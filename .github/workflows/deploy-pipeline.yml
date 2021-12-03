@@ -1,0 +1,21 @@
+name: Deploy Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_dev:
+    name: Deploy to Dev
+    uses: ./github/workflows/reusable-deploy.yml
+    with:
+      environment: dev
+    secrets:
+      PASSWORD: ${{ secrets.PASSWORD }}
+      
+  deploy_prod:
+    name: Deploy to Prod
+    uses: ./github/workflows/reusable-deploy.yml
+    with:
+      environment: prod
+    secrets:
+      PASSWORD: ${{ secrets.PASSWORD }}
