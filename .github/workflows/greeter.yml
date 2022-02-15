@@ -20,5 +20,5 @@ jobs:
       - name: Greet once
         run: echo Hello ${{ inputs.name }}
       - name: Greet twice
-        if: ${{ inputs.double }}
+        if: ${{ inputs.double == true }}
         run: echo Hello ${{ inputs.name }}
