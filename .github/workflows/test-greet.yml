@@ -14,7 +14,7 @@ on:
 jobs:
   greet:
     name: Greet
-    uses: colindembovsky/reusable-workflows-env-secrets/.github/workflows/greeter2.yml@main
+    uses: colindembovsky/reusable-workflows-env-secrets/.github/workflows/greeter.yml@main
     with:
       name: ${{ github.event.inputs.name }}
       double: ${{ github.event.inputs.double }}
