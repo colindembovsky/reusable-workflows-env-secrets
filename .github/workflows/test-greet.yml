@@ -1,0 +1,21 @@
+name: Greeter
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: string
+        description: Your Name
+      double:
+        type: boolean
+        description: Set to double the fun
+        default: false
+
+jobs:
+  greet:
+    name: Greet
+    uses: colindembovsky/reusable-workflows-env-secrets/.github/workflows/greeter2.yml@main
+    with:
+      name: ${{ github.event.inputs.name }}
+      double: ${{ github.event.inputs.double }}
+     
