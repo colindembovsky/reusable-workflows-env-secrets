@@ -16,4 +16,4 @@ jobs:
     uses: colindembovsky/reusable-workflows-env-secrets/.github/workflows/greeter.yml@main
     with:
       name: ${{ github.event.inputs.name }}
-      double: true  # ${{ github.event.inputs.double }}
+      double: ${{ fromJSON(github.event.inputs.double) }}
