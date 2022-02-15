@@ -9,7 +9,6 @@ on:
       double:
         type: boolean
         description: Set to double the fun
-        default: false
 
 jobs:
   greet:
@@ -18,4 +17,3 @@ jobs:
     with:
       name: ${{ github.event.inputs.name }}
       double: ${{ github.event.inputs.double }}
-     
