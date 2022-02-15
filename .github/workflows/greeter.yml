@@ -1,0 +1,24 @@
+name: Greeter 2.0
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: Your name
+        type: string
+        
+      double:
+        description: True to double print
+        type: boolean
+
+jobs:
+  gret:
+    name: Greet
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Greet once
+        run: echo Hello ${{ inputs.name }}
+      - name: Greet twice
+        if: ${{ inputs.double }}
+        run: echo Hello ${{ inputs.name }}
